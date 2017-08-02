@@ -1,0 +1,31 @@
+<table class="table table-bordered">
+  <tr>
+        <th>Nomor Kamar</th>
+        <th>Kapasitas</th>
+        <th>Harga Permalam</th>
+        <th>Action</th>
+        
+  </tr>
+  <tr *ngFor="let r of roomlist; let i of index">
+    
+      <td>{{r.nomor}}</td>
+      <td>{{r.kapasitas}}</td>
+      <td>{{r.harga}}</td>
+      
+
+      <td *ngIf = "r.available == 1; else unavailable">
+        <button type="button" class="btn btn-info">Book Now !</button>
+      </td>
+
+
+
+
+      
+      <ng-template #unavailable> 
+        <td>
+          <div style="color:red"> Tidak Tersedia </div>
+        </td> 
+      </ng-template> 
+       
+  </tr>
+</table>
